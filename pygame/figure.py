@@ -23,7 +23,7 @@ def main() :
         for event in pygame.event.get() :
             # 아래 구문을 작성하지 않으면 game 이 꺼지지 않는다 ;; 
             if event.type == pygame.QUIT :
-                pygame.QUIT
+                pygame.quit()
                 sys.exit()
                 
         screen.fill(BLACK)
