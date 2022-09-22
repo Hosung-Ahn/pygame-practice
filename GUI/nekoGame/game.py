@@ -1,6 +1,12 @@
 import tkinter as tk
-
 import random
+import os
+from PIL import ImageTk
+
+
+def Path(s) :
+    base_folder = os.path.dirname(__file__)
+    return os.path.join(base_folder, s)
 
 neko = [[0 for _ in range(8)] for _ in range(10)] 
 
@@ -227,23 +233,23 @@ root.resizable(False, False)
 
 img_neko = [
     None,
-    tk.PhotoImage(file='C:\WorkSpace\PyGame\GUI\images\\neko1.png'),
-    tk.PhotoImage(file='C:\WorkSpace\PyGame\GUI\images\\neko2.png'),
-    tk.PhotoImage(file='C:\WorkSpace\PyGame\GUI\images\\neko3.png'),
-    tk.PhotoImage(file='C:\WorkSpace\PyGame\GUI\images\\neko4.png'),
-    tk.PhotoImage(file='C:\WorkSpace\PyGame\GUI\images\\neko5.png'),
-    tk.PhotoImage(file='C:\WorkSpace\PyGame\GUI\images\\neko6.png'),
-    tk.PhotoImage(file='C:\WorkSpace\PyGame\GUI\images\\neko_niku.png')    
+    ImageTk.PhotoImage(file=Path('neko1.png')),
+    ImageTk.PhotoImage(file=Path('neko2.png')),
+    ImageTk.PhotoImage(file=Path('neko3.png')),
+    ImageTk.PhotoImage(file=Path('neko4.png')),
+    ImageTk.PhotoImage(file=Path('neko5.png')),
+    ImageTk.PhotoImage(file=Path('neko6.png')),
+    ImageTk.PhotoImage(file=Path('neko_niku.png')),
 ]
 
 cvs = tk.Canvas(root, width=CX, height=CY)
 cvs.pack()
-bg = tk.PhotoImage(file='C:\WorkSpace\PyGame\GUI\images\\neko_bg.png')     
+bg = ImageTk.PhotoImage(file=Path('neko_bg.png')),
 cvs.create_image(CX/2, CY/2, image=bg)
 
 root.bind('<Motion>', mouse_move)
 root.bind('<ButtonPress>', mouse_press)
-cursor = tk.PhotoImage(file='C:\WorkSpace\PyGame\GUI\images\\neko_cursor.png')
+cursor = ImageTk.PhotoImage(file=Path('neko_cursor.png')),
 
 draw_neko()
 game_main()
