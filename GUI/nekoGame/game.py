@@ -206,8 +206,8 @@ def game_main() :
                 neko[cursor_y][cursor_x] = tsugi
                 tsugi = 0
                 index = 2
-        cvs.delete('CURSOR')
-        cvs.create_image(cursor_x*72 + 60, cursor_y*72+60, image=cursor, tag="CURSOR")
+        cvs.delete("CURSOR")
+        cvs.create_image(cursor_x*72 + 60, cursor_y*72 + 60, image=cursor, tag='CURSOR')
         draw_neko()
     elif index == 6 :
         timer += 1
@@ -249,7 +249,7 @@ cvs.create_image(CX/2, CY/2, image=bg)
 
 root.bind('<Motion>', mouse_move)
 root.bind('<ButtonPress>', mouse_press)
-cursor = ImageTk.PhotoImage(file=Path('neko_cursor.png')),
+cursor = tk.PhotoImage(file=Path('neko_cursor.png')),
 
 draw_neko()
 game_main()
