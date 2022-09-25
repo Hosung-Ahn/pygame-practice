@@ -20,7 +20,7 @@ dungeon = [[0 for _ in range(DC)] for _ in range(DR)]
 imgWall = pygame.image.load("RPG/images/wall.png")
 imgFloor = pygame.image.load("RPG/images/floor.png")
 
-def make_dungeon() :
+def make_dungeon(dungeon) :
     dr = [0,1,0,-1] 
     dc = [-1,0,1,0]
     
@@ -52,7 +52,7 @@ def main() :
     screen = pygame.display.set_mode((1056, 432))
     clock = pygame.time.Clock()
     
-    make_dungeon()
+    make_dungeon(dungeon)
     
     while True :
         for event in pygame.event.get() :
@@ -61,7 +61,7 @@ def main() :
                 sys.exit()
             if event.type == pygame.KEYDOWN :
                 if event.key == pygame.K_SPACE :
-                    make_dungeon()
+                    make_dungeon(dungeon)
                     
             for r in range(R) :
                 for c in range(C) :
