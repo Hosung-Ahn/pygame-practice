@@ -11,7 +11,7 @@ L = 48
 
 maze = [[0 for _ in range(C)] for _ in range(R)]
 
-def make_maze() :
+def make_maze(maze) :
     dr = [0,1,0,-1]
     dc = [-1,0,1,0]
     
